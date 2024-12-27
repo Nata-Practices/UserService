@@ -1,0 +1,12 @@
+bin
+.idea
+apphost.exe
+rider.project.model.nuget.info
+rider.project.restore.info
+UserService.AssemblyInfoInputs.cache
+UserService.AssemblyInfo.cs
+UserService.dll
+UserService.dll
+UserService.dll
+UserService.pdb
+UserService.sourcelink.json
