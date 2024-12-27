@@ -62,3 +62,6 @@ D:\dev\Nata\UserService\UserService\obj\Debug\net8.0\refint\UserService.dll
 D:\dev\Nata\UserService\UserService\obj\Debug\net8.0\UserService.pdb
 D:\dev\Nata\UserService\UserService\obj\Debug\net8.0\UserService.genruntimeconfig.cache
 D:\dev\Nata\UserService\UserService\obj\Debug\net8.0\ref\UserService.dll
+D:\dev\Nata\UserService\UserService\obj\Debug\net8.0\UserService.sourcelink.json
+D:\dev\Nata\UserService\UserService\bin\Debug\net8.0\UserService.xml
+D:\dev\Nata\UserService\UserService\obj\Debug\net8.0\UserService.xml

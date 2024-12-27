@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>UserService</name>
+    </assembly>
+    <members>
+        <member name="T:UserService.Controllers.UsersController">
+            <summary>
+            Контроллер для управления пользователями.
+            </summary>
+        </member>
+        <member name="M:UserService.Controllers.UsersController.#ctor(UserService.Services.IUserService)">
+            <summary>
+            Контроллер для управления пользователями.
+            </summary>
+        </member>
+        <member name="M:UserService.Controllers.UsersController.GetAllUsers">
+            <summary>
+            Получить список всех пользователей.
+            </summary>
+            <returns>Список пользователей</returns>
+            <response code="200">Успешный ответ с данными пользователей</response>
+        </member>
+        <member name="M:UserService.Controllers.UsersController.GetUserById(System.String)">
+            <summary>
+            Получить пользователя по идентификатору.
+            </summary>
+            <param name="id">Идентификатор пользователя</param>
+            <returns>Информация о пользователе</returns>
+            <response code="200">Успешный ответ с данными пользователя</response>
+            <response code="404">Пользователь с таким идентификатором не найден</response>
+        </member>
+        <member name="M:UserService.Controllers.UsersController.CreateUser(UserService.Models.UserModel)">
+            <summary>
+            Создать нового пользователя.
+            </summary>
+            <param name="user">Модель нового пользователя</param>
+            <returns>Созданный пользователь</returns>
+            <response code="201">Пользователь успешно создан</response>
+            <response code="400">Неверный формат данных</response>
+            <response code="409">Пользователь с таким ID уже существует</response>
+        </member>
+        <member name="M:UserService.Controllers.UsersController.UpdateUser(System.String,UserService.Models.UserModel)">
+            <summary>
+            Обновить данные пользователя.
+            </summary>
+            <param name="id">Идентификатор пользователя</param>
+            <param name="updatedUser">Модель обновленного пользователя</param>
+            <returns>Обновленный пользователь</returns>
+            <response code="200">Пользователь успешно обновлен</response>
+            <response code="404">Пользователь с таким идентификатором не найден</response>
+        </member>
+        <member name="M:UserService.Controllers.UsersController.DeleteUser(System.String)">
+            <summary>
+            Удалить пользователя.
+            </summary>
+            <param name="id">Идентификатор пользователя</param>
+            <returns>Удалённый пользователь</returns>
+            <response code="200">Пользователь успешно удалён</response>
+            <response code="404">Пользователь с таким идентификатором не найден</response>
+        </member>
+        <member name="T:UserService.Models.ApiResponse`1">
+            <summary>
+            Стандартный ответ API.
+            </summary>
+            <typeparam name="T">Тип данных, возвращаемых API.</typeparam>
+        </member>
+        <member name="P:UserService.Models.ApiResponse`1.Success">
+            <summary>
+            Флаг успешности выполнения запроса.
+            </summary>
+        </member>
+        <member name="P:UserService.Models.ApiResponse`1.Data">
+            <summary>
+            Данные, возвращаемые API.
+            </summary>
+        </member>
+        <member name="P:UserService.Models.ApiResponse`1.Message">
+            <summary>
+            Сообщение, описывающее результат выполнения.
+            </summary>
+        </member>
+        <member name="T:UserService.Models.UserModel">
+            <summary>
+            Модель пользователя.
+            </summary>
+        </member>
+        <member name="P:UserService.Models.UserModel.Id">
+            <summary>
+            Уникальный идентификатор пользователя, используется как ключ в базе данных.
+            </summary>
+        </member>
+        <member name="P:UserService.Models.UserModel.Name">
+            <summary>
+            Имя пользователя.
+            </summary>
+        </member>
+        <member name="P:UserService.Models.UserModel.RegisteredObjects">
+            <summary>
+            Количество зарегистрированных объектов, связанных с пользователем.
+            </summary>
+        </member>
+    </members>
+</doc>

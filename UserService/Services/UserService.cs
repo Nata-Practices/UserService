@@ -6,12 +6,12 @@ namespace UserService.Services;
 
 public interface IUserService
 {
-    Task<List<UserModel>> GetAllUsersAsync(); // Получить всех пользователей
-    Task<UserModel> GetUserByIdAsync(string id); // Получить пользователя по ID
-    Task CreateUserAsync(UserModel user); // Создать нового пользователя
-    Task<UserModel> UpdateUserAsync(string id, UserModel updatedUser); // Обновить данные пользователя
-    Task<UserModel> DeleteUserAsync(string id); // Удалить пользователя
-    Task IncrementRegisteredObjectsAsync(string userId, string objectId); // Инкремент зарегистрированных объектов
+    Task<List<UserModel>> GetAllUsersAsync();
+    Task<UserModel> GetUserByIdAsync(string id);
+    Task CreateUserAsync(UserModel user);
+    Task<UserModel> UpdateUserAsync(string id, UserModel updatedUser);
+    Task<UserModel> DeleteUserAsync(string id);
+    Task IncrementRegisteredObjectsAsync(string userId, string objectId);
 }
 
 public class UserService : IUserService

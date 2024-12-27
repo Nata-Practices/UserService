@@ -17,7 +17,7 @@ public class Program
             .SetBasePath(Directory.GetCurrentDirectory())
             .AddJsonFile("Properties/appsettings.json", optional: false, reloadOnChange: true)
             .AddJsonFile("Properties/appsettings.Development.json", optional: true, reloadOnChange: true);
-
+        
         // Отключение автоматической обработки ошибок модели
         builder.Services.Configure<ApiBehaviorOptions>(options =>
         {
@@ -27,7 +27,13 @@ public class Program
         // Настройка логирования
         builder.Logging.ClearProviders();
         builder.Logging.AddConsole();
-
+        
+        // Добавление контроллеров и подключение фильтра для валидации
+        builder.Services.AddControllers(options =>
+        {
+            options.Filters.Add<ValidationFilter>();
+        });
+        
         // Конфигурация MongoDB
         builder.Services.Configure<MongoDBSettings>(
             builder.Configuration.GetSection("MongoDB"));
@@ -48,9 +54,21 @@ public class Program
         // Добавление контроллеров
         builder.Services.AddControllers();
 
-        // Добавление Swagger для API-документации
+        // Добавление поддержки Swagger для документации API
         builder.Services.AddEndpointsApiExplorer();
-        builder.Services.AddSwaggerGen();
+        builder.Services.AddSwaggerGen(options =>
+        {
+            options.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
+            {
+                Title = "User API",
+                Version = "v1",
+                Description = "Вторичный API"
+            });
+
+            var xmlFile = $"{System.Reflection.Assembly.GetExecutingAssembly().GetName().Name}.xml";
+            var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+            options.IncludeXmlComments(xmlPath);
+        });
 
         var app = builder.Build();
 
