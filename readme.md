@@ -29,6 +29,29 @@ UserService/
 └── Program.cs                         # Точка входа в приложение
 ```
 
+### Настройка Kafka с помощью Docker и Confluent CLI
+
+1. Установи Docker Desktop, который я кинул в телегу.
+2. Перезагрузи компьютер после установки.
+3. Запусти **Docker Desktop** и сверни его.
+4. Разархивируй файл `confluent_4.14.0_windows_amd64.zip` в любую папку.
+5. Открой `cmd`, перейди в папку с `confluent.exe` с помощью команды `cd`. Запусти из под `cmd` `confluent.exe` 
+6. Запусти Kafka с помощью следующей команды:
+   ```bash
+   confluent local start kafka
+   ```
+7. Создай необходимые топики:
+   - Для подтверждений:
+     ```bash
+     confluent local kafka topic create ObjectConfirmations --partitions 1
+     ```
+   - Для запросов:
+     ```bash
+     confluent local kafka topic create ObjectRequests --partitions 1
+     ```
+8. Сверни `cmd`.
+9. Открой проект UserService, либо не открывай, похуй на него вообще.
+
 ---
 
 ## Установка и запуск
