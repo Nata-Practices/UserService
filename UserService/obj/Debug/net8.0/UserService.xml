@@ -20,6 +20,7 @@
             </summary>
             <returns>Список пользователей</returns>
             <response code="200">Успешный ответ с данными пользователей</response>
+            <response code="401">Вы не авторизованы</response>
         </member>
         <member name="M:UserService.Controllers.UsersController.GetUserById(System.String)">
             <summary>
@@ -28,6 +29,7 @@
             <param name="id">Идентификатор пользователя</param>
             <returns>Информация о пользователе</returns>
             <response code="200">Успешный ответ с данными пользователя</response>
+            <response code="401">Вы не авторизованы</response>
             <response code="404">Пользователь с таким идентификатором не найден</response>
         </member>
         <member name="M:UserService.Controllers.UsersController.CreateUser(UserService.Models.UserModel)">
@@ -38,6 +40,7 @@
             <returns>Созданный пользователь</returns>
             <response code="201">Пользователь успешно создан</response>
             <response code="400">Неверный формат данных</response>
+            <response code="401">Вы не авторизованы</response>
             <response code="409">Пользователь с таким ID уже существует</response>
         </member>
         <member name="M:UserService.Controllers.UsersController.UpdateUser(System.String,UserService.Models.UserModel)">
@@ -48,6 +51,7 @@
             <param name="updatedUser">Модель обновленного пользователя</param>
             <returns>Обновленный пользователь</returns>
             <response code="200">Пользователь успешно обновлен</response>
+            <response code="401">Вы не авторизованы</response>
             <response code="404">Пользователь с таким идентификатором не найден</response>
         </member>
         <member name="M:UserService.Controllers.UsersController.DeleteUser(System.String)">
@@ -57,6 +61,7 @@
             <param name="id">Идентификатор пользователя</param>
             <returns>Удалённый пользователь</returns>
             <response code="200">Пользователь успешно удалён</response>
+            <response code="401">Вы не авторизованы</response>
             <response code="404">Пользователь с таким идентификатором не найден</response>
         </member>
         <member name="T:UserService.Models.ApiResponse`1">

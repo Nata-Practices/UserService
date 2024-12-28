@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using MongoDB.Driver;
 using UserService.Models;
 using UserService.Services;
@@ -18,7 +19,9 @@ public class UsersController(IUserService userService) : ControllerBase
     /// </summary>
     /// <returns>Список пользователей</returns>
     /// <response code="200">Успешный ответ с данными пользователей</response>
+    /// <response code="401">Вы не авторизованы</response>
     [HttpGet]
+    [Authorize]
     public async Task<IActionResult> GetAllUsers()
     {
         var users = await userService.GetAllUsersAsync();
@@ -37,8 +40,10 @@ public class UsersController(IUserService userService) : ControllerBase
     /// <param name="id">Идентификатор пользователя</param>
     /// <returns>Информация о пользователе</returns>
     /// <response code="200">Успешный ответ с данными пользователя</response>
+    /// <response code="401">Вы не авторизованы</response>
     /// <response code="404">Пользователь с таким идентификатором не найден</response>
     [HttpGet("{id}")]
+    [Authorize]
     public async Task<IActionResult> GetUserById(string id)
     {
         var user = await userService.GetUserByIdAsync(id);
@@ -68,8 +73,10 @@ public class UsersController(IUserService userService) : ControllerBase
     /// <returns>Созданный пользователь</returns>
     /// <response code="201">Пользователь успешно создан</response>
     /// <response code="400">Неверный формат данных</response>
+    /// <response code="401">Вы не авторизованы</response>
     /// <response code="409">Пользователь с таким ID уже существует</response>
     [HttpPost]
+    [Authorize]
     public async Task<IActionResult> CreateUser([FromBody] UserModel user)
     {
         try
@@ -110,6 +117,7 @@ public class UsersController(IUserService userService) : ControllerBase
     /// <param name="updatedUser">Модель обновленного пользователя</param>
     /// <returns>Обновленный пользователь</returns>
     /// <response code="200">Пользователь успешно обновлен</response>
+    /// <response code="401">Вы не авторизованы</response>
     /// <response code="404">Пользователь с таким идентификатором не найден</response>
     [HttpPut("{id}")]
     public async Task<IActionResult> UpdateUser(string id, [FromBody] UserModel updatedUser)
@@ -140,6 +148,7 @@ public class UsersController(IUserService userService) : ControllerBase
     /// <param name="id">Идентификатор пользователя</param>
     /// <returns>Удалённый пользователь</returns>
     /// <response code="200">Пользователь успешно удалён</response>
+    /// <response code="401">Вы не авторизованы</response>
     /// <response code="404">Пользователь с таким идентификатором не найден</response>
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteUser(string id)

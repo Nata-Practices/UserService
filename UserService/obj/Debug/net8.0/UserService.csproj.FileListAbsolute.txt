@@ -65,3 +65,11 @@ D:\dev\Nata\UserService\UserService\obj\Debug\net8.0\ref\UserService.dll
 D:\dev\Nata\UserService\UserService\obj\Debug\net8.0\UserService.sourcelink.json
 D:\dev\Nata\UserService\UserService\bin\Debug\net8.0\UserService.xml
 D:\dev\Nata\UserService\UserService\obj\Debug\net8.0\UserService.xml
+D:\dev\Nata\UserService\UserService\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\dev\Nata\UserService\UserService\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+D:\dev\Nata\UserService\UserService\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\dev\Nata\UserService\UserService\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+D:\dev\Nata\UserService\UserService\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+D:\dev\Nata\UserService\UserService\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\dev\Nata\UserService\UserService\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+D:\dev\Nata\UserService\UserService\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
