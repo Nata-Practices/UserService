@@ -52,7 +52,9 @@ UserService/
 8. Сверни `cmd`.
 9. Открой проект UserService, либо не открывай, похуй на него вообще.
 10. Где взять логи кафки? В cmd: `docker logs -f <container_id_or_name>`
-11. Как посмотреть логи топиков кафки? Не ебу!
+![image](https://github.com/user-attachments/assets/4d228e00-0336-4930-a64a-dd76c202a4a1)
+
+12. Как посмотреть логи топиков кафки? Не ебу!
 
 ---
 
